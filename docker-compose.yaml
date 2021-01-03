@@ -1,0 +1,17 @@
+version: '3.4'
+
+services:
+  database:
+    image: mysql:latest
+    command: '--default-authentication-plugin=mysql_native_password'
+    volumes:
+      - db_data_python_flask:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: wantask2021
+      MYSQL_DATABASE:  corona_stats
+      MYSQL_USER: momina
+      MYSQL_PASSWORD: wantask2021
+    ports:
+      - "33061:3306"
+
